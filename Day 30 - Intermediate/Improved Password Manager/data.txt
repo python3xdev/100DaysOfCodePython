@@ -1,0 +1,6 @@
+github.com | dan@email.com | 123mypass
+realpython.com | dan@email.com | my_pass_is83tt3r
+mywebsite.com | dan@email.com | FS0jxjVj%a3W3*E
+twitter.com | dan@email.com | nV+tP2g$6er&o7zf(
+udemy.com | dan@email.com | 0#b(d#ZAMbR9i59
+hackthebox.com | python3.x_dev | D$22*7$1#6Jtmj(k&MTip
