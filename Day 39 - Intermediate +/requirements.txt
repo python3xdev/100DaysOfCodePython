@@ -1,0 +1,5 @@
+Requirements:
+1) requests
+2) pprint
+3) twilio.rest
+4) dateutil.relativedelta
