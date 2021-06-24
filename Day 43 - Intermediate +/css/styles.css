@@ -1,0 +1,25 @@
+/*https://colorhunt.co/palette/222831393e4600adb5eeeeee -> Good Colors*/
+
+body {
+	background-color: #222831;
+	color: #EEEEEE
+}
+
+hr {
+	border-color: #00ADB5;
+	border-style: dotted none none;
+	border-width: 5px;
+	/*width: 10%;*/
+}
+
+a {
+	color: #00ADB5;
+}
+
+h1 {
+	color: #77ACF1;
+}
+
+h3 {
+	color: #77ACF1;
+}
