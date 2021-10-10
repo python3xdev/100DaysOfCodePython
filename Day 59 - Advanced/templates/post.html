@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "header.html" %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{ blog_data.image_url }})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{ blog_data.title }}</h1>
+                            <h2 class="subheading">{{ blog_data.subtitle }}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">{{ blog_data.author }}</a>
+                                on {{ blog_data.date }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>{{ blog_data.body }}</p>
+                        <p>
+                            Placeholder text by
+                            <a href="http://spaceipsum.com/">Somebody</a>
+                            &middot; Images by
+                            <a href="https://unsplash.com">Unsplash</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        {% include "footer.html" %}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
