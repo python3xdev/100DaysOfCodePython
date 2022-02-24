@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- TODO - uncomment the above line later when you are working on  the responsive side -->
+		<!--  TODO - Create a Favicon  -->
+		<title>Daniel Martin | Software Engineering Student</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+		<script src="https://kit.fontawesome.com/18473207e7.js" crossorigin="anonymous"></script>
+	</head>
+	<body id='body'>
+
+		<div class="icon-bar">
+			<a href="javascript:void(0);" class="toggle-sidebar" onclick="ToggleSidebar()"><i id='toggleMenuIcon' class="fas fa-arrow-alt-circle-left"></i></a>
+			<a id='sidebar-social-icon-twitter' target='_blank' href="https://twitter.com/python3x_dev" class="twitter"><i class="fab fa-twitter"></i></a>
+			<a id='sidebar-social-icon-discord' target='_blank' href="https://discord.gg/MGdkFrVaeK" class="discord"><i class="fab fa-discord"></i></a>
+			<a id='sidebar-social-icon-github' target='_blank' href="https://github.com/python3xdev/" class="github"><i class="fab fa-github"></i></a>
+			<a id='sidebar-social-icon-linkedin' target='_blank' href="https://www.linkedin.com/in/daniel-martin-a59144125/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+			<a id='sidebar-social-icon-youtube' target='_blank' href="https://www.youtube.com/channel/UChOjt_4IGB5iV0EWDtl4hrw" class="youtube"><i class="fab fa-youtube"></i></a>
+			<a id='themeChanger' href="javascript:void(0);" class="theme" onclick='ChangeTheme()'><i id='themeChangerIcon' class="far fa-sun"></i></a>
+		</div>
+
+		<div class="divThatHoldsAllSections">
+			<section class="whoamiSection">
+				<div class="typing-container">
+					<span id='sentence' class="sentence">Hi, I'm&nbsp;<span id="feature-text"></span></span>
+					<span class="input-cursor"></span>
+				</div>
+			</section>
+
+			<section>
+				<div class="row">
+					<div class="column first-column">
+						<h2 class="column-title">My Skills</h2>
+						<div class="skillItem">
+							<h3>Python</h3>
+							<div class="progress-value progress-python"></div>
+							<h3>HTML & CSS</h3>
+							<div class="progress-value progress-html-and-css"></div>
+							<h3>JavaScript</h3>
+							<div class="progress-value progress-js"></div>
+							<h3>C++</h3>
+							<div class="progress-value progress-cpp"></div>
+						</div>
+					</div>
+					<div class="column second-column">
+						<h2 class="column-title">About Me</h2>
+						<p>I am a student studying to become a software engineer. Currently studying python. I'm also planning to learn Java, C#, C++, C, Blockchain technology & more!</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+	<footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</footer>
+</html>

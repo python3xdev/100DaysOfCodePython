@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto+Mono&family=Titillium+Web:wght@400;900&display=swap');
+
+/*
+	font-family: 'Architects Daughter', cursive;
+
+	font-family: 'Roboto Mono', monospace;
+
+	font-family: 'Titillium Web', sans-serif;
+*/
+
+/* https://pinetools.com/invert-color - Invert colors to get the opposite! */
+
+:root {
+	--background-color: #3a3a3a;
+	--text-color: #cacaca;
+	--blue: #5777db;
+	--green: #16c784;
+	--red: #ea3943;
+	--social-media-icon-color: #ffffff;
+	--background-image-darkness-intensity: 0.6;
+	--main-div-color: #2e2e2e;
+}
+
+body {
+	background-color: var(--background-color);
+	transition: 0.5s;
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto Mono', monospace;
+}
+
+/* Typing Effect in the .whoamiSection */
+.typing-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes blink {
+	0% {opacity: 1;}
+	40% {opacity: 1;}
+	60% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+.input-cursor {
+	display: inline-block;
+	width: 0.125rem;
+	height: 2rem;
+	background-color: var(--text-color);
+	margin-left: 8px;
+	animation: blink .6s linear infinite alternate;
+}
+
+.sentence {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 2rem;
+	color: var(--text-color);
+}
+
+#feature-text {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 2rem;
+}
+
+
+/* Sidebar For Social */
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+	position: fixed;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+	display: block;
+	text-align: center;
+	padding: 16px;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+	background-color: #0b0e08;
+	/*transition: 0.5s;*/
+}
+
+.toggle-sidebar {
+	background: #DAA520;
+	color: var(--social-media-icon-color);
+}
+
+.discord {
+	background: #5865F2;
+	color: var(--social-media-icon-color);
+}
+
+.twitter {
+	background: #55ACEE;
+	color: var(--social-media-icon-color);
+}
+
+.github {
+	background: #171515;
+	color: var(--social-media-icon-color);
+}
+
+.linkedin {
+	background: #007bb5;
+	color: var(--social-media-icon-color);
+}
+
+.youtube {
+	background: #bb0000;
+	color: var(--social-media-icon-color);
+}
+
+.theme {
+	background: #262626;
+	color: var(--social-media-icon-color);
+}
+
+.hideItem {
+	transform: translateX(-5rem);
+}
+
+/* Sections */
+.divThatHoldsAllSections {
+	transition: 0.5s;
+	margin: 3rem 5rem;
+	border-radius: 1rem;
+	background-color: var(--main-div-color);
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25), 0 5px 15px 0 rgba(0, 0, 0, 0.25)
+}
+
+
+.whoamiSection {
+	padding: 5rem 0;
+}
+
+/* 2 Main Columns */
+
+/* Create two equal columns that floats next to each other */
+.column {
+	transition: 0.5s;
+	box-sizing: border-box;
+	float: left;
+	width: 45%;
+	padding: 15px;
+	margin: 1rem;
+	border-radius: 1rem;
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+
+.first-column {
+	float: left;
+}
+
+.second-column {
+	float: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+	.column {
+		width: 90%;
+	}
+	.first-column {
+		float: none;
+	}
+	.second-column {
+		float: none;
+	}
+
+}
+
+/* Styling The 'Knowledge Bars'  */
+
+.progress {
+	transition: 0.5s;
+	background: rgba(255,255,255,0.1);
+	justify-content: flex-start;
+	border-radius: 100px;
+	align-items: center;
+	position: relative;
+	padding: 0 5px;
+	display: flex;
+	height: 40px;
+	width: 100%;
+}
+
+.progress-value {
+	animation: load 3s normal forwards;
+	box-shadow: 0 10px 20px -10px var(--text-color);
+	border-radius: 100px;
+	background: var(--text-color);
+	height: 30px;
+	width: 0;
+}
+
+.progress-python {
+	animation: load_python 3s normal forwards;
+}
+
+@keyframes load_python {
+	0% { width: 0; }
+	100% { width: 100%; }}
+
+.progress-html-and-css {
+	animation: load_html_and_css 3s normal forwards;
+}
+
+@keyframes load_html_and_css {
+	0% { width: 0; }
+	100% { width: 60%; }}
+
+.progress-js{
+	animation: load_js 3s normal forwards;
+}
+
+@keyframes load_js {
+	0% { width: 0; }
+	100% { width: 20%; }}
+
+.progress-cpp {
+	animation: load_cpp 3s normal forwards;
+}
+
+@keyframes load_cpp {
+	0% { width: 0; }
+	100% { width: 5%; }}

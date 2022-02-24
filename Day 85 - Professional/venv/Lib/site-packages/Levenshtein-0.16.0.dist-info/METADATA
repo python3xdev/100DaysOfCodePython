@@ -1,0 +1,219 @@
+Metadata-Version: 2.1
+Name: Levenshtein
+Version: 0.16.0
+Summary: Python extension for computing string edit distances and similarities.
+Home-page: https://github.com/maxbachmann/Levenshtein
+Author: Max Bachmann
+Author-email: contact@maxbachmann.de
+License: GPL
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: COPYING
+Requires-Dist: rapidfuzz (<1.9,>=1.8.2)
+
+# Levenshtein
+
+<p>
+  <a href="https://github.com/maxbachmann/Levenshtein/actions">
+    <img src="https://github.com/maxbachmann/Levenshtein/workflows/Build/badge.svg"
+         alt="Continous Integration">
+  </a>
+  <a href="https://pypi.org/project/levenshtein/">
+    <img src="https://img.shields.io/pypi/v/levenshtein"
+         alt="PyPI package version">
+  </a>
+  <a href="https://www.python.org">
+    <img src="https://img.shields.io/pypi/pyversions/levenshtein"
+         alt="Python versions">
+  </a>
+  <a href="https://maxbachmann.github.io/Levenshtein">
+    <img src="https://img.shields.io/badge/-documentation-blue"
+         alt="Documentation">
+  </a>
+  <a href="https://github.com/maxbachmann/Levenshtein/blob/main/COPYING">
+    <img src="https://img.shields.io/github/license/maxbachmann/Levenshtein"
+         alt="GitHub license">
+  </a>
+</p>
+
+## Introduction
+The Levenshtein Python C extension module contains functions for fast
+computation of:
+
+* Levenshtein (edit) distance, and edit operations
+* string similarity
+* approximate median strings, and generally string averaging
+* string sequence and set similarity
+
+This is a fork of [ztane/python-Levenshtein](https://github.com/ztane/python-Levenshtein), since the original
+project is no longer actively maintained.
+
+## Requirements
+* Python 2.7 or later
+
+## Installation
+```bash
+pip install levenshtein
+```
+
+## Documentation
+
+The documentation for the current version can be found at [https://maxbachmann.github.io/Levenshtein/](https://maxbachmann.github.io/Levenshtein/)
+
+## License
+
+Levenshtein is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+
+See the file [COPYING](https://github.com/maxbachmann/Levenshtein/blob/main/COPYING) for the full text of GNU General Public License version 2.
+## Changelog
+
+### v0.16.0
+* Add support for Python 3.10
+
+### v0.15.0
+* Update SequenceMatcher interface to support the autojunk parameter
+
+### v0.14.0
+* Drop Python 2 support
+* Fixed free of non heap object due caused by zero offset on a heap object
+* Fixed warnings about missing type conversions
+* Fix segmentation fault in subtract_edit when incorrect input types are used
+* Fixed unchecked memory allocations
+* Implement distance/ratio/hamming/jaro/jaro_winkler
+  using rapidfuzz instead of providing a own implementation
+* Implement Wrapper for inverse/editops/opcodes/matching_blocks/subtract_edit/apply_edit
+  using Cython to simplify support for new Python versions
+
+### v0.13.0
+* Maintainership passed to Max Bachmann
+* use faster bitparallel implementations for distance and ratio
+* avoid string copies in distance, ratio and hamming
+* Fix usage of deprecated Unicode APIs in distance, ratio and hamming
+* Fixed incorrect window size inside Jaro and Jaro-Winkler implementation
+* Fixed incorrect exception messages
+* Removed unused functions and compiler specific hacks
+* Split the Python and C implementations to simplify building of
+  the C library
+* Fixed multiple bugs which prevented the use as C library, since some functions
+  only got defined when compiling for Python
+* Build and deliver python wheels for the library
+* Fixed incorrect allocation size in lev_editops_matching_blocks and
+  lev_opcodes_matching_blocks
+
+### v0.12.1
+* Fixed handling of numerous possible wraparounds in calculating the size
+  of memory allocations; incorrect handling of which could cause denial
+  of service or even possible remote code execution in previous versions
+  of the library.
+
+### v0.12.0
+* Fixed a bug in StringMatcher.StringMatcher.get_matching_blocks /
+  extract_editops for Python 3; now allow only `str` editops on
+  both Python 2 and Python 3, for simpler and working code.
+* Added documentation in the source distribution and in GIT
+* Fixed the package layout: renamed the .so/.dll to _levenshtein,
+  and made it reside inside a package, along with the StringMatcher
+  class.
+* Fixed spelling errors.
+
+### v0.11.2
+* Fixed a bug in setup.py: installation would fail on Python 3 if the locale
+  did not specify UTF-8 charset (Felix Yan).
+
+* Added COPYING, StringMatcher.py, gendoc.sh and NEWS in MANIFEST.in, as they
+  were missing from source distributions.
+
+### v0.11.1
+* Added Levenshtein.h to MANIFEST.in
+
+### v0.11.0
+* Python 3 support, maintainership passed to Antti Haapala
+
+### v0.10.2
+* Made python-Lehvenstein Git compatible and use setuptools for PyPi upload
+* Created HISTORY.txt and made README reST compatible
+
+### v0.10.1
+* apply_edit() broken for Unicodes was fixed (thanks to Radovan Garabik)
+* subtract_edit() function was added
+
+### v0.10.0
+* Hamming distance, Jaro similarity metric and Jaro-Winkler similarity
+      metric were added
+* ValueErrors raised on wrong argument types were fixed to TypeErrors
+
+### v0.9.0
+* a poor-but-fast generalized median method quickmedian() was added
+* some auxiliary functions added to the C api (lev_set_median_index,
+      lev_editops_normalize, ...)
+
+### v0.8.2
+* fixed missing `static' in the method list
+
+### v0.8.1
+* some compilation problems with non-gcc were fixed
+
+v0.8.0
+* median_improve(), a generalized median improving function, was added
+* an arbitrary length limitation imposed on greedy median() result was
+      removed
+* out of memory should be handled more gracefully (on systems w/o memory
+      overcomitting)
+* the documentation now passes doctest
+
+### v0.7.0
+* fixed greedy median() for Unicode characters > U+FFFF, it's now usable
+      with whatever integer type wchar_t happens to be
+* added missing MANIFEST
+* renamed exported C functions, all public names now have lev_, LEV_ or
+      Lev prefix; defined lev_byte, lev_wchar, and otherwise santinized
+      the (still unstable) C interface
+* added edit-ops group of functions, with two interfaces: native, useful
+      for string averaging, and difflib-like for interoperability
+* added an example SequenceMatcher-like class StringMatcher
+
+### v0.6.0
+* a segfault in seqratio()/setratio() on invalid input has been fixed
+      to an exception
+* optimized ratio() and distance() (about 20%)
+* Levenshtein.h header file was added to make it easier to actually use
+      it as a C library
+
+### v0.5.0
+* a segfault in setratio() was fixed
+* median() handles all empty strings situation more gracefully
+
+### v0.4.0
+* new functions seqratio() and setratio() computing similarity between
+      string sequences and sets
+* Levenshtein optimizations (affects all routines except median())
+* all Sequence objects are accepted, not just Lists
+
+### v0.3.0
+* setmedian() finding set median was added
+* median() initial overhead for Unicodes was reduced
+
+### v0.2.0
+* ratio() and distance() now accept both Strings and Unicodes
+* removed uratio() and udistance()
+* Levenshtein.c is now compilable as a C library (with -DNO_PYTHON)
+* a median() function finding approximate weighted median of a string
+      set was added
+
+### v0.1.0
+* Inital release
+
+
+
