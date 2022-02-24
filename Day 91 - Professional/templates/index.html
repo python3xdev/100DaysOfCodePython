@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image To Color Palette</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <div class="center-h">
+            <h1>Find Out The 10 Most Common Colors In Your Image!</h1>
+            {% with messages  = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form method='post' action="{{ url_for('upload_file') }}" enctype='multipart/form-data'>
+                <input type='file' name='file'>
+                <input type='submit' value='Upload'>
+            </form>
+            <h2>Made with ❤ by python3.x_dev</h2>
+        </div>
+    </body>
+</html>

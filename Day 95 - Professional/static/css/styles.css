@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&display=swap'); -> a little hard to read*/
+
+body {
+	background-color: #353535;
+	font-family: 'Ubuntu', sans-serif;
+	color: #CACACA;
+
+}
+
+.center_ver_hor_form {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	/*width: 50%;*/
+}
+
+.center_inner_text {
+	text-align: center;
+	margin: 0 10rem;
+}
+
+.word-def-wrap {
+	text-align: left;
+}
+
+.word-img {
+	border-radius: 50%;
+	width: 15rem;
+}
+
+/* Form Classes */
+.form__element {
+	text-align: center;
+}
+
+.form__group {
+	position: relative;
+	padding: 15px 0 0;
+	margin-top: 10px;
+	width: 100%;
+}
+.form__field {
+	font-family: inherit;
+	width: 100%;
+	border: 0;
+	border-bottom: 2px solid #9b9b9b;
+	outline: 0;
+	font-size: 1.3rem;
+	color: #fff;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+}
+.form__field::placeholder {
+	color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+	font-size: 1.3rem;
+	cursor: text;
+	top: 20px;
+}
+.form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #9b9b9b;
+}
+.form__field:focus {
+	padding-bottom: 6px;
+	font-weight: 700;
+	border-width: 3px;
+	border-image: linear-gradient(to right, #11998e, #38ef7d);
+	border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #11998e;
+	font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+	box-shadow: none;
+}
+
+/* Search Button */
+
+.wrapper{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 5rem;
+}
+
+.link_wrapper{
+	position: relative;
+}
+
+input.submit{
+	display: block;
+	width: 250px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	text-decoration: none;
+	background: #333;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border: 3px solid #333;
+	transition: all .35s;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.icon{
+	width: 50px;
+	height: 50px;
+	border: 3px solid transparent;
+	position: absolute;
+	transform: rotate(45deg);
+	right: 0;
+	top: 0;
+	z-index: -1;
+	transition: all .35s;
+}
+
+.icon svg{
+	width: 30px;
+	position: absolute;
+	top: calc(50% - 15px);
+	left: calc(50% - 15px);
+	transform: rotate(-45deg);
+	fill: #2ecc71;
+	transition: all .35s;
+}
+
+input.submit:hover{
+	width: 200px;
+	border: 3px solid #2ecc71;
+	background: transparent;
+	color: #2ecc71;
+}
+
+input.submit:hover + .icon{
+	border: 3px solid #2ecc71;
+	right: -25%;
+}
+
+/* Go Back Button */
+
+button.go-back-button{
+	padding: 15px 40px;
+	background: #000;
+	border:0;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 12px;
+	letter-spacing: 3px;
+	position: relative;
+	transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+	cursor: pointer;
+	display: block;
+	margin: 1rem auto;
+}
+
+button.go-back-button::after,
+button.go-back-button::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0px;
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+button.go-back-button::after{
+	width: 30px;
+	height: 1px;
+	background: white;
+	transform: translateX(-3px);
+	margin-top: 0px;
+}
+
+button.go-back-button::before{
+	content: "";
+	transform: rotate(-135deg) translateX(50%);
+	width: 11px;
+	height: 11px;
+	background: transparent;
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+	margin-top: -1px;
+}
+
+
+button.go-back-button:hover{
+	padding: 15px 60px 15px 20px;
+}
+
+button.go-back-button:hover::after,
+button.go-back-button:hover::before{
+	opacity: 1;
+	right: 15px;
+}

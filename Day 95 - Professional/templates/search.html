@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Dictionary - by python3.x_dev</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	</head>
+	<body>
+		<div class="center_inner_text">
+			{% if is_dict %}
+				<hr>
+				{% for def in data['definitions'] %}
+					<div class="word-def-wrap">
+						{% if def['image_url'] == None %}
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png" class="word-img">
+						{% else %}
+							<img src="{{ def['image_url'] }}" class="word-img">
+						{% endif %}
+						<h1><u>Word</u>: {{ data['word'].title() }}</h1>
+						<h2><u>Pronunciation</u>: {{ data['pronunciation'] }}</h2>
+						<h2><u>Emoji</u>: {{ def['emoji'] }}</h2>
+						<h2><u>Type</u>: {{ def['type'] }}</h2>
+						<h2><u>Definition</u>: {{ def['definition'] }}</h2>
+						<h2><u>Example</u>: {{ def['example'] }}</h2>
+						<hr>
+					</div>
+				{% endfor %}
+			{% else %}
+				<h1>Sorry, there is no definition for that word. :(</h1>
+			{% endif %}
+			<button class="go-back-button" onclick="history.back()">New Search</button>
+		</div>
+	</body>
+</html>

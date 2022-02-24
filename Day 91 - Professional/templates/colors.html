@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image To Color Palette</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <div class="center-h">
+            <h1>The 10 Most Common Colors In Your Image!</h1>
+            {% for color in color_data[:10] %}
+                <div style="background-color: rgb({{color[0][1:-1]}})" class="color-box"></div>
+                <h3>{{ color[0] }} - {{ color[1] }} pixels</h3>
+                <hr>
+            {% endfor %}
+            <h2>Made with ❤ by python3.x_dev</h2>
+        </div>
+    </body>
+</html>
