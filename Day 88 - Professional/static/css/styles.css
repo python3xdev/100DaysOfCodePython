@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+
+body{
+	background-color: #353535;
+	color: #f7f7f7;
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+hr {
+	margin: 0.5rem auto 0;
+}
+
+.todo-list-container {
+	width: 25rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: #5c5c5c;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.delete-todo-item {
+	color: #ff2626;
+	text-decoration: none;
+}
+
+.delete-todo-item:hover {
+	color: #991414;
+}
+
+.add-new-todo-form {
+
+}
+
+.todo-items {
+	height: 20rem;
+	overflow-y: auto;
+}
+
+.emoji-checkbox {
+	text-decoration: none;
+}
+
+.scratched-out {
+	text-decoration: line-through;
+}
+
+.todo-list-title-container {
+	text-align: center;
+}
+
+.todo-list-title {
+	margin: 1rem auto 0;
+}
+
+.form__group {
+	position: relative;
+	padding: 15px 0 0;
+	margin-top: 10px;
+	width: 100%;
+}
+.form__field {
+	font-family: inherit;
+	width: 100%;
+	border: 0;
+	border-bottom: 2px solid #9b9b9b;
+	outline: 0;
+	font-size: 1.3rem;
+	color: #fff;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+}
+.form__field::placeholder {
+	color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+	font-size: 1.3rem;
+	cursor: text;
+	top: 20px;
+}
+.form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #9b9b9b;
+}
+.form__field:focus {
+	padding-bottom: 6px;
+	font-weight: 700;
+	border-width: 3px;
+	border-image: linear-gradient(to right, #11998e, #38ef7d);
+	border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #11998e;
+	font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+	box-shadow: none;
+}
+
+.div-around-submit {
+	text-align: center;
+}
+
+.submit-button {
+	color: white;
+	border: none;
+	cursor: pointer;
+	opacity: 1;
+	padding: 14px 20px;
+	border-radius: 1rem;
+	margin-top: 10px;
+	font-weight: bold;
+	background-color: #37c72a;
+	font-size: 0.9rem;
+	text-decoration: none;
+	width: 100%;
+}
+
+.submit-button:hover {
+	opacity: 0.9;
+}

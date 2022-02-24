@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cafe & Wi-Fi | HOME</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	</head>
+	<body>
+		<a class="anchor-button add-button" href="{{ url_for('add') }}">ADD</a>
+		<ul class="cafe-list">
+			{% for cafe in cafes[::-1] %}
+				<li>
+					<div class="cafe-item {{ 'darker-background' if cafe.id%2 == 0 }}">
+						<div class="cafe-item-left-part">
+							<img class="cafe-item-img" src="{{ cafe.img_url }}">
+						</div>
+						<div class="cafe-item-right-part">
+							<h2>{{ cafe.name }}</h2>
+							<h3>Location: {{ cafe.location }} | <a class="cafe-map-link" href="{{ cafe.map_url }}" target="_blank">Map Link</a></h3>
+							<h3>Seats: {{ cafe.seats }}</h3>
+							<h3>Has Wi-Fi: {{ "Yes" if cafe.has_wifi == 1 else "No" }}</h3>
+							<h3>Has Toilets: {{ "Yes" if cafe.has_toilet == 1 else "No" }}</h3>
+							<h3>Has Sockets: {{ "Yes" if cafe.has_sockets == 1 else "No" }}</h3>
+							<h3>Can Take Calls: {{ "Yes" if cafe.can_take_calls == 1 else "No" }}</h3>
+							<h3>Coffee Price: {{ cafe.coffee_price }}</h3>
+							<a class="anchor-button delete-button" href="{{ url_for('delete', cafe_id=cafe.id) }}">DELETE</a>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

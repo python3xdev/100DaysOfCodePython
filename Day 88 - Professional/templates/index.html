@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TODO List</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	</head>
+	<body>
+		<div class="todo-list-container">
+			<div class="todo-list-title-container">
+				<h2 class="todo-list-title">TODO List</h2>
+			</div>
+			<hr>
+			<div class="todo-items">
+				{% for todo in todos[::-1] %}
+					<h3><a class="emoji-checkbox" href="{{ url_for('change_status', todo_item_id=todo.id) }}">{{ '✅' if todo.complete else '⬜' }}</a> <a class="delete-todo-item" style="display: {{ 'none' if not todo.complete }};" href="{{ url_for('delete', todo_item_id=todo.id) }}">DELETE</a> <span class="{{ 'scratched-out' if todo.complete}}">{{ todo.title }}</span></h3> <!-- ❌ -->
+					<hr>
+				{% endfor %}
+			</div>
+			<div class="add-new-container">
+				<form class="add-new-todo-form" action="{{ url_for('add') }}" method="post">
+					<div class="form__group field">
+						<input class="form__field" type="text" id='title' name="title" placeholder="Create" required>
+						<label for="title" class="form__label">Create a new one! Title...</label>
+						<input class="submit-button" type="submit" value="Submit">
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

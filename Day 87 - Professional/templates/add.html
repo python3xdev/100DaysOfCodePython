@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cafe & Wi-Fi | ADD</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	</head>
+	<body>
+		<form action="{{ url_for('add') }}", method="post" class="add-form">
+			<div class="form__group field">
+				<input class="form__field" type="text" name="name" placeholder="Name" required><br>
+				<label for="name" class="form__label">Name</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="url" name="map_url" placeholder="Map URL" required><br>
+				<label for="map-url" class="form__label">Map URL</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="url" name="img_url" placeholder="Image URL" required><br>
+				<label for="imaeg-url" class="form__label">Image URL</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="location" placeholder="Location" required><br>
+				<label for="location" class="form__label">Location</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="has_sockets" placeholder="Has Sockets" required><br>
+				<label for="has-sockets" class="form__label">Has Sockets (Yes/No)</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="has_toilet" placeholder="Has Toilets" required><br>
+				<label for="has-toilets" class="form__label">Has Toilets (Yes/No)</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="has_wifi" placeholder="Has Wi-Fi" required><br>
+				<label for="has-wifi" class="form__label">Has Wi-Fi (Yes/No)</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="can_take_calls" placeholder="Can Take Calls" required><br>
+				<label for="can-take-calls" class="form__label">Can Take Calls (Yes/No)</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="seats" placeholder="Seats" required><br>
+				<label for="seats" class="form__label">Seats</label>
+			</div>
+
+			<div class="form__group field">
+				<input class="form__field" type="text" name="coffee_price" placeholder="Coffee Price" required><br>
+				<label for="coffe-price" class="form__label">Coffee Price (w/o £)</label>
+			</div>
+			<div class="div-around-submit">
+				<button type="submit" class="submit-button">SUBMIT</button>
+			</div>
+		</form>
+	</body>
+</html>
